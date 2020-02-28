@@ -10,6 +10,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+// setProperty1,BeanNameAware,ApplicationContextAware Âï°í before Âï°í  @PostConstruct , xml :init-method="customInit" customInit() ,after,destory
 public class MyBean implements BeanNameAware,ApplicationContextAware,InitializingBean,DisposableBean{
 	public void setProperty1(String property1){
 		System.out.println("MyBean.setProperty1() ½ÇÇà");

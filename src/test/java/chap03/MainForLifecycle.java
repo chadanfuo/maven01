@@ -1,5 +1,6 @@
 package chap03;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -12,7 +13,9 @@ public class MainForLifecycle {
 	private static void useXml(){
 		System.out.println("");
 		String configLocation="classpath:config-for-lifecycle.xml";
-		AbstractApplicationContext ctx= new GenericXmlApplicationContext(configLocation);
+		//AbstractApplicationContext ctx= new GenericXmlApplicationContext(configLocation);
+		AnnotationConfigApplicationContext ctx=
+				new AnnotationConfigApplicationContext(ConfigForLifecycle.class);
 		System.out.println("===============");
 		ctx.close();
 	}
